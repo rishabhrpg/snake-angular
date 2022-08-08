@@ -1,0 +1,16 @@
+<div id="board">
+  <app-snake
+    class="snake"
+    *ngFor="let snakePart of snakeGameService.snake"
+    [snake]="this.snakeGameService.snake"
+    [style]="{ gridRowStart: snakePart.y, gridColumnStart: snakePart.x }"
+  ></app-snake>
+  <app-food
+    class="food"
+    [food]="this.snakeGameService.food"
+    [style]="{
+      gridRowStart: snakeGameService.food.y,
+      gridColumnStart: snakeGameService.food.x
+    }"
+  ></app-food>
+</div>
